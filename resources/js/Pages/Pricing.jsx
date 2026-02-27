@@ -66,7 +66,7 @@ export default function Pricing() {
                         price="$0"
                         period=""
                         features={[
-                            'Up to 5 scripts',
+                            'Up to 2 scripts',
                             'Record & replay',
                             'Cross-page navigation',
                         ]}

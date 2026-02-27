@@ -24,7 +24,7 @@ return [
     ],
 
     'free_tier' => [
-        'max_scripts' => 5,
+        'max_scripts' => 2,
         'can_export' => false,
     ],
 

@@ -22,7 +22,7 @@ Web application and API backend for [Steno](https://github.com/msuemnig/steno), 
 
 | Plan | Price | Scripts | Members | Export |
 |------|-------|---------|---------|--------|
-| Free | $0 | 5 | 1 | No |
+| Free | $0 | 2 | 1 | No |
 | Individual | $50/yr | Unlimited | 1 | Yes |
 | Business | $250/yr | Unlimited | 10 | Yes |
 
@@ -145,7 +145,7 @@ All API routes require a Sanctum Bearer token (`Authorization: Bearer <token>`).
 | GET | `/api/personas/{id}` | Show persona |
 | PUT | `/api/personas/{id}` | Update persona |
 | DELETE | `/api/personas/{id}` | Delete persona (soft) |
-| POST | `/api/sync` | Bidirectional sync (requires active subscription) |
+| POST | `/api/sync` | Bidirectional sync (requires active subscription) — accepts `deleted_at` for soft deletes |
 
 ## Project Structure
 
