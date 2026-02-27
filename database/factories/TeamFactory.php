@@ -1,0 +1,42 @@
+<?php
+
+namespace Database\Factories;
+
+use App\Models\Team;
+use App\Models\User;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Team>
+ */
+class TeamFactory extends Factory
+{
+    protected $model = Team::class;
+
+    public function definition(): array
+    {
+        $name = fake()->company();
+
+        return [
+            'owner_id' => User::factory(),
+            'name' => $name,
+            'slug' => Str::slug($name) . '-' . Str::random(5),
+            'plan_type' => 'free',
+        ];
+    }
+
+    public function personal(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'plan_type' => 'free',
+        ]);
+    }
+
+    public function business(): static
+    {
+        return $this->state(fn (array $attributes) => [
+            'plan_type' => 'business',
+        ]);
+    }
+}
